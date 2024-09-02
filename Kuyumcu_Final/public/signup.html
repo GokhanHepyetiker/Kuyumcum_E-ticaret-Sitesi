@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="./css/styles.css" rel="stylesheet">
+  <script src="js/header-footer.js" defer></script>
+</head>
+<body class="font-open bg-black text-gega-grey">
+  <div id="header-placeholder"></div>
+
+  <section class="font-open min-h-screen flex items-center justify-center">
+    <div class="bg-black text-white p-8 rounded-lg shadow-lg max-w-md w-full">
+      <h2 class="text-3xl font-bold mb-4 text-center">Kayıt Ol</h2>
+      <form id="kayitForm" class="space-y-6" enctype="multipart/form-data">
+        <div>
+          <label for="kullaniciAdi" class="block mb-2">Kullanıcı Adı</label>
+          <input type="text" id="kullaniciAdi" name="kullaniciAdi" class="w-full p-3 rounded bg-gega-grey text-black" required>
+        </div>
+        <div>
+          <label for="eposta" class="block mb-2">E-posta Adresi</label>
+          <input type="email" id="eposta" name="eposta" class="w-full p-3 rounded bg-gega-grey text-black" required>
+        </div>
+        <div>
+          <label for="sifre" class="block mb-2">Şifre</label>
+          <input type="password" id="sifre" name="sifre" class="w-full p-3 rounded bg-gega-grey text-black" required>
+        </div>
+        <div>
+          <label for="kullaniciTipi" class="block mb-2">Kullanıcı Tipi</label>
+          <select id="kullaniciTipi" name="kullaniciTipi" class="w-full p-3 rounded bg-gega-grey text-black" required>
+            <option value="Musteri">Müşteri</option>
+            <option value="Magaza">Mağaza Sahibi</option>
+          </select>
+        </div>
+        <div>
+          <label for="profilResmi" class="block mb-2">Profil Resmi</label>
+          <input type="file" id="profilResmi" name="profilResmi" class="w-full p-3 rounded bg-gega-grey text-black">
+        </div>
+        <button type="submit" class="w-full bg-gega-red hover:bg-red-700 text-white p-3 rounded">Kayıt Ol</button>
+      </form>
+      <div id="kayitSonuc" class="mt-4 text-center hidden"></div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/kullanici.js"></script>
+</body>
+</html>

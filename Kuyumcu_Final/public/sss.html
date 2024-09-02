@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="./css/styles.css" rel="stylesheet">
+  <script src="js/header-footer.js" defer></script>
+</head>
+<body class="font-open bg-black text-gega-grey">
+    <!-- Header Section -->
+    <div id="header-placeholder"></div>
+
+   
+   <!-- SSS Section -->
+<section class="py-24">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl lg:text-5xl font-bold text-gega-red mb-8">Sıkça Sorulan Sorular</h2>
+      
+      <!-- SSS Listesi -->
+      <div id="accordion" class="space-y-4">
+        <!-- SSS Öğesi 1 -->
+        <div class=" text-black rounded-md">
+          <button class="faq-question w-full text-left flex justify-between items-center p-4 font-bold" onclick="toggleFaq(event)">
+            Ürünlerinizin teslimat süresi nedir?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer hidden p-4 border-t">
+            Ürünlerimizin teslimat süresi, siparişin verildiği bölgeye göre değişiklik göstermekle birlikte, genellikle 3-5 iş günü arasındadır.
+          </div>
+        </div>
+
+        <!-- SSS Öğesi 2 -->
+        <div class=" text-black rounded-md">
+          <button class="faq-question w-full text-left flex justify-between items-center p-4 font-bold" onclick="toggleFaq(event)">
+            Ürün iadeleri nasıl yapılır?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer hidden p-4 border-t">
+            Ürün iadeleri için, ürünü orijinal ambalajıyla birlikte, faturanızın arka yüzündeki iade formunu doldurarak anlaşmalı kargo firmamız aracılığıyla gönderebilirsiniz.
+          </div>
+        </div>
+
+        <!-- SSS Öğesi 3 -->
+        <div class=" text-black rounded-md">
+          <button class="faq-question w-full text-left flex justify-between items-center p-4 font-bold" onclick="toggleFaq(event)">
+            Ürünlerinizin garantisi var mı?
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer hidden p-4 border-t">
+            Evet, tüm ürünlerimiz, satın alma tarihinden itibaren 2 yıl süreyle garantilidir. Garanti kapsamında olan herhangi bir sorun için müşteri hizmetlerimizle iletişime geçebilirsiniz.
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+      
+  
+<div id="footer-placeholder"></div>
+<script>
+  function toggleFaq(event) {
+      const faqAnswer = event.currentTarget.nextElementSibling;
+      const icon = event.currentTarget.querySelector('i');
+      if (faqAnswer.classList.contains('hidden')) {
+        faqAnswer.classList.remove('hidden');
+        faqAnswer.classList.add('block');
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      } else {
+        faqAnswer.classList.remove('block');
+        faqAnswer.classList.add('hidden');
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      }
+    }
+</script>
+</body>
+</html>

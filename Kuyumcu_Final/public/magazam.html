@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./css/styles.css" rel="stylesheet">
+    <script src="js/header-footer.js" defer></script>
+    <script src="js/magazam.js" defer></script>
+</head>
+<body class="font-open bg-black text-gega-grey">
+    <div id="header-placeholder"></div>
+   
+    <section class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl lg:text-5xl font-bold text-gega-red mb-8">Mağazam</h2>
+
+            <div class="mt-8">
+                <h3 class="text-2xl font-bold text-gega-red mb-4">Yeni Ürün Ekle</h3>
+                <form id="urun-ekle-form" class="space-y-4" enctype="multipart/form-data">
+                    <div>
+                        <label for="urun-ad" class="block mb-2">Ürün Adı</label>
+                        <input type="text" id="urun-ad" name="ad" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                    </div>
+                    <div>
+                        <label for="urun-aciklama" class="block mb-2">Açıklama</label>
+                        <textarea id="urun-aciklama" name="aciklama" class="w-full p-3 rounded bg-gega-grey text-black" rows="3" required></textarea>
+                    </div>
+                    <div>
+                        <label for="urun-fiyat" class="block mb-2">Fiyat</label>
+                        <input type="number" id="urun-fiyat" name="fiyat" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                    </div>
+                    <div>
+                        <label for="urun-resimurl" class="block mb-2">Resim</label>
+                        <input type="file" id="urun-resimurl" name="resim" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                    </div>
+                    <div>
+                        <label for="urun-stokmiktari" class="block mb-2">Stok Miktarı</label>
+                        <input type="number" id="urun-stokmiktari" name="stokmiktari" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                    </div>
+                    <div>
+                        <label for="urun-kategori" class="block mb-2">Kategori</label>
+                        <input type="text" id="urun-kategori" name="kategori" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                    </div>
+                    <button type="submit" class="mt-4 bg-gega-red hover:bg-red-700 text-white p-3 rounded">Ürün Ekle</button>
+                </form>
+            </div>
+            <div id="urunler-container" class="space-y-8">
+                <!-- Ürünler buraya yüklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>

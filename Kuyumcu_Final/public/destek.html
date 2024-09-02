@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="./css/styles.css" rel="stylesheet">
+  <script src="js/header-footer.js" defer></script>
+    <script src="js/header-footer.js" defer></script>
+</head>
+<body class="font-open bg-black text-gega-grey">
+    <!-- Header Section -->
+    <div id="header-placeholder"></div>
+
+   
+   <!-- SSS Section -->
+<section class="py-24">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center text-white mb-8">Destek</h1>
+    
+        <!-- Destek Formu -->
+        <div class="bg-black text-white p-8 rounded-lg shadow-md mb-8">
+          <h2 class="text-3xl font-semibold mb-4">Destek Talebi Gönder</h2>
+          <form action="/support" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block mb-2">Adınız</label>
+              <input type="text" id="name" name="name" class="w-full p-3 rounded bg-gega-grey text-black" required>
+            </div>
+            <div>
+              <label for="email" class="block mb-2">E-posta Adresiniz</label>
+              <input type="email" id="email" name="email" class="w-full p-3 rounded bg-gega-grey text-black" required>
+            </div>
+            <div>
+              <label for="message" class="block mb-2">Mesajınız</label>
+              <textarea id="message" name="message" rows="4" class="w-full p-3 rounded bg-gega-grey text-black"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-gega-red hover:bg-red-700 text-white p-3 rounded">Gönder</button>
+          </form>
+        </div>
+</section>
+      
+  <!-- Footer Section -->
+  
+  <div id="footer-placeholder"></div>
+</body>
+</html>

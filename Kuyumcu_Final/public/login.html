@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./css/styles.css" rel="stylesheet">
+    <script src="js/header-footer.js" defer></script>
+</head>
+<body class="font-open bg-black text-gega-grey">
+    <div id="header-placeholder"></div>
+
+    <section class="font-open min-h-screen flex items-center justify-center">
+        <div class="bg-black text-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <h2 class="text-3xl font-bold mb-4 text-center">Giriş Yap</h2>
+            <form id="girisForm" class="space-y-6">
+                <div>
+                    <label for="eposta" class="block mb-2">E-posta Adresi</label>
+                    <input type="text" id="eposta" name="eposta" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                </div>
+                <div>
+                    <label for="sifre" class="block mb-2">Şifre</label>
+                    <input type="password" id="sifre" name="sifre" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                </div>
+                <button type="submit" class="w-full bg-gega-red hover:bg-red-700 text-white p-3 rounded">Giriş Yap</button>
+            </form>
+            <div id="girisSonuc" class="mt-4 text-center hidden"></div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const girisForm = document.getElementById('girisForm');
+        
+            if (girisForm) {
+                girisForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+        
+                    const formData = new FormData(girisForm);
+                    const data = Object.fromEntries(formData.entries());
+                    try {
+                        const response = await fetch('/api/kullanicilar/login', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(data)
+                        });
+        
+                        const result = await response.json();
+                        if (response.ok) {
+                            localStorage.setItem('token', result.token);
+                            alert('Giriş başarılı! Anasayfaya yönlendiriliyorsunuz.');
+                            window.location.href = 'index.html';
+                        } else {
+                            alert(`Giriş başarısız: ${result.message}`);
+                        }
+                    } catch (error) {
+                        console.error('Giriş sırasında bir hata oluştu:', error);
+                        alert('Giriş sırasında bir hata oluştu.');
+                    }
+                });
+            }
+        });
+        </script>
+        
+        
+  </body>
+  </html>

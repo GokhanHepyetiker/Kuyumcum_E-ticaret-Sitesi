@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./css/styles.css" rel="stylesheet">
+    <script src="js/header-footer.js" defer></script>
+    <script src="js/sepetim.js" defer></script>
+</head>
+<body class="font-open bg-black text-gega-grey">
+    <div id="header-placeholder"></div>
+   
+    <section class="py-24">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl lg:text-5xl font-bold text-gega-red mb-8">Sepetim</h2>
+        
+        <!-- Ürün Listesi -->
+        <div class="overflow-x-auto">
+          <table class="table-auto w-full">
+            <thead>
+              <tr class="text-center">
+                <th class="px-4 py-2">Resim</th>
+                <th class="px-4 py-2">Ürün</th>
+                <th class="px-4 py-2">Fiyat</th>
+                <th class="px-4 py-2">Miktar</th>
+                <th class="px-4 py-2">Toplam</th>
+                <th class="px-4 py-2">Kaldır</th>
+              </tr>
+            </thead>
+            <tbody id="sepet-urunler">
+              <!-- Sepet ürünleri buraya yüklenecek -->
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Kart Bilgileri ve Ödeme -->
+        <div class="mt-8">
+            <h3 class="text-2xl font-bold text-gega-red mb-4">Ödeme Bilgileri</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="kart-numarasi" class="block mb-2">Kart Numarası</label>
+                    <input type="text" id="kart-numarasi" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                </div>
+                <div>
+                    <label for="son-kullanma-tarihi" class="block mb-2">Son Kullanma Tarihi</label>
+                    <input type="text" id="son-kullanma-tarihi" class="w-full p-3 rounded bg-gega-grey text-black" placeholder="AA/YY" required>
+                </div>
+                <div>
+                    <label for="cvv" class="block mb-2">CVV</label>
+                    <input type="text" id="cvv" class="w-full p-3 rounded bg-gega-grey text-black" required>
+                </div>
+            </div>
+            <button id="odeme-yap" class="mt-4 bg-gega-red hover:bg-red-700 text-white p-3 rounded">Ödeme Yap</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>
